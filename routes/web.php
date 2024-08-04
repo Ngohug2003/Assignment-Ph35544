@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\categories\CategoriesController;
+use App\Http\Controllers\categories\PostAdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Client\AuthController;
 use App\Http\Controllers\Client\PostController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +33,12 @@ Route::post('/dang-nhap',[AuthController::class , 'login'])->name('login');
 
 Route::post('/logout',[AuthController::class, 'logout'])->name('logout');
 
-Route::get('password/reset', function () {
-    return view('auth.passwords.email');
-})->name('password.request');
+// Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('password/reset', [ForgotPasswordController::class, 'reset'])->name('password.update');
+// Route::post('reset-password', 'ResetPasswordController@sendMail');
+// Route::put('reset-password/{token}', 'ResetPasswordController@reset');
 
 Route::get('/tintuc' , [PostController::class , 'categoryALl'])->name('category.showAll');
 Route::get('/tintuc/{slug}', [PostController::class, 'category'])->name('category.show');
@@ -51,6 +56,15 @@ Route::middleware(['is_admin'])->group(function () {
     Route::put('/admin/categories/{id}', [CategoriesController::class, 'update'])->name('categories.update');
     Route::delete('/admin/categories/{id}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
     Route::post('/logout', [CategoriesController::class, 'logout'])->name('logout');
+
+    // Post 
+    Route::get('/admin/post', [PostAdminController::class, 'index'])->name('post.index');
+    Route::get('/admin/post/create', [PostAdminController::class, 'create'])->name('post.create');
+    Route::post('/admin/post', [PostAdminController::class, 'store'])->name('post.store');
+    Route::get('/admin/post/{id}/edit', [PostAdminController::class, 'edit'])->name('post.edit');
+    Route::put('/admin/post/{id}', [PostAdminController::class, 'update'])->name('post.update');
+    Route::delete('/admin/post/{id}', [PostAdminController::class, 'destroy'])->name('post.destroy');
+   
 });
 
 

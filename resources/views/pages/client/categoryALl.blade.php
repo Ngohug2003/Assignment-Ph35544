@@ -11,7 +11,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a  href="{{url('/title',$item->id)}}"><img  src="{{$item->img_url}}" alt=""></a>
+                        <a  href="{{url('/title',$item->id)}}"><img  src="{{asset('storage/'.$item->img_url)}}" alt="ảnh"></a>
                     </div>
 
                     <!-- Blog Content -->

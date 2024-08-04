@@ -30,7 +30,7 @@
                         <div class="single-blog-post style-3">
                             <!-- Blog Thumbnail -->
                             <div class="blog-thumbnail">
-                                <a href="{{url('/title',$item->id)}}"><img src="{{$item->img_url}}" alt=""></a>
+                                <a href="{{url('/title',$item->id)}}"><img style="width: 500px; height: 250px;" src="{{asset('storage/'.$item->img_url)}}" alt=""></a>
                                 <a href="{{url('/title',$item->id)}}" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                             </div>
 
@@ -59,7 +59,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a  href="{{url('/title',$item->id)}}"><img  src="{{$item->img_url}}" alt=""></a>
+                        <a  href="{{url('/title',$item->id)}}"><img  src="{{asset('storage/'.$item->img_url)}}" alt=""></a>
                     </div>
 
                     <!-- Blog Content -->

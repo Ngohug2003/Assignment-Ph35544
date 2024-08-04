@@ -53,8 +53,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tin</h6>
-                        <a class="collapse-item" href="">Danh sách tin</a>
-                        <a class="collapse-item" href="">Thêm tin</a>
+                        <a class="collapse-item" href="{{route('post.index')}}">Danh sách tin</a>
+                        <a class="collapse-item" href="{{route('post.create')}}">Thêm tin</a>
                     </div>
                 </div>
             </li>

@@ -2,7 +2,7 @@
 @section('title', 'Tin tức')
 @section('content')
 
-<div class="post-details-title-area bg-overlay clearfix" style="background-image: url('{{$posttitle->img_url}}')">
+<div class="post-details-title-area bg-overlay clearfix" style="background-image: url('{{asset('storage/'.$posttitle->img_url)}}')">
     <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-8">

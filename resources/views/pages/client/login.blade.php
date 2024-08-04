@@ -51,11 +51,12 @@
                                     {{ __('Đăng nhập') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                             
+                                    <a class="btn btn-link" href="">
+                                        {{-- {{ url('password/reset', $token) }} --}}
                                         {{ __('Quên mật khẩu?') }}
                                     </a>
-                                @endif
+
                             </div>
                         </div>
                     </form>

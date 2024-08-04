@@ -1,4 +1,5 @@
 @extends('layouts.admin.master')
+@section('title', 'Thêm loại tin')
 
 @section('content')
     @if (session()->has('success'))

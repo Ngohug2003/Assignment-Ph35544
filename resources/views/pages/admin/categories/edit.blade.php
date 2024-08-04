@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-
+@section('title', 'Chỉnh sửa loại tin')
 @section('content')
     @if (session()->has('error'))
         <script>
